@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+    /* styling */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe0e7;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #ffccbb;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav.open {
+      left: 0;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    .signup-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #eee;
+      height: 10px;
+      margin: 20px 0;
+    }
+
+    .progress {
+      width: 50%;
+      height: 100%;
+      background-color: #ff6347;
+    }
+
+    .Checklist {
+      float: left;
+      width: 30%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .Checklist label {
+      display: block;
+      margin-bottom: 10px;
+    }
+.achievements {
+  outline: 2px dashed red;
+}
+   .achievements {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+#lala {text-align: center;}
+
+.achievements h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.achievement-gallery {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.achievement-gallery img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.story p {
+   max-width: 600px;
+   margin: auto;
+   text-align: center;
+    }
+
+   .large-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Pop-out nav -->
+  <button class="menu-btn" onclick="toggleNav()">&#9776;</button>
+  <div class="nav" id="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Achivements.html">Achievements</a>
+     <a href="addchore.html">Add Chores</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- header -->
+  <section class="hero-image">
+    <img src="Header .png" alt="Tidytime Banner" />
+  </section>
+
+  <h1>Tidytime</h1>
+<a href="Signup.html" class="signup-btn">Sign up</a>
+
+  <section class="progress-bar">
+    <div class="progress"></div>
+  </section>
+
+  <!-- checklist -->
+  <h2 style="margin-left: 20px;">Checklist</h2>
+  <div class="Checklist">
+    <form>
+      <label><input type="checkbox" name="task1"> Make bed</label>
+      <label><input type="checkbox" name="task2"> Wash dishes</label>
+      <label><input type="checkbox" name="task3"> Take out trash</label>
+      <label><input type="checkbox" name="task4"> Vacuum floor</label>
+      <label><input type="checkbox" name="task5"> Feed pet</label>
+      <label><input type="checkbox" name="task6"> Water plants</label>
+      <label><input type="checkbox" name="task7"> Do laundry</label>
+      <label><input type="checkbox" name="task8"> Clean bathroom</label>
+      <label><input type="checkbox" name="task9"> Organize desk</label>
+    </form>
+  </div>
+   <!--story-->
+    <div class="story">
+      <p>In our house, every day was a battle over who does what.</p>
+      <p>That’s why we created TidyTime <br> The ultimate chore management website that ends the arguments for good.</p>
+      <p>No more confusion, no more disagreements.</p>
+      <p>Just stress-free, fair chore sharing, and finally… <br>peace between siblings.</p>
+    </div>
+<div id="lala">
+ <!--example achivents-->
+  <section class="achievements">
+    <h2>Most recent achievements</h2>
+    <div class="achievement-gallery">
+      <img src="30dishes.png" alt="Achievement 1" />
+      <img src="5.png" alt="Achievement 2" />
+      <img src="bed.png" alt="Achievement 3" />
+    </div>
+   </div>  
+
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

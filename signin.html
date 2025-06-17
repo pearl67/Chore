@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TidyTime</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe0e7;
+    }
+
+    /* Header Image */
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Hamburger Button */
+    .menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Sidebar Nav */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #ffccbb;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav.open {
+      left: 0;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    /* Sign Up Button */
+    .signup-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Optional: Push content down below nav */
+    .spacer {
+      height: 60px;
+    }
+     .signin-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+
+    .signin-form {
+      background-color: #ffe3da;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .signin-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .signin-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .signin-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .signin-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signin-form button:hover {
+      background-color: #ff8c66;
+    }
+
+    .signin-form .signup-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .signin-form .signup-link a {
+      color: #ff6347;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Button -->
+  <button class="menu-btn" onclick="toggleNav()">&#9776;</button>
+
+  <!-- Navigation Sidebar -->
+  <div class="nav" id="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Achivements.html">Achievements</a>
+    <a href="addchore.html">Add Chores</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- Header Image -->
+  <section class="hero-image">
+    <img src="Header .png" alt="Tidytime Banner" />
+  </section>
+
+  <!-- Page Title & Sign Up -->
+  <h1>TidyTime</h1>
+  <button class="signup-btn">Sign up</button>
+
+  <!-- Spacer to push content below fixed items -->
+  <div class="spacer"></div>
+
+  <!-- Add your page content below this line -->
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+  </script>
+<div class="signin-container">
+  <form class="signin-form">
+    <h2>Sign In</h2>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+
+    <button type="submit">Sign In</button>
+
+    <div class="signup-link">
+      Don’t have an account? <a href="signup.html">Sign up here!</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

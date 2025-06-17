@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TidyTime</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe0e7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* HEADER SECTION */
+    .header {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .header-banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .top-nav {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      background: none;
+      border: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    .signup-button {
+      background-color: #ffa07a;
+      color: blue;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .header-title {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      font-weight: bold;
+      color: #000;
+      z-index: 5;
+    }
+
+    .spacer {
+      height: 20px;
+    }
+
+    .add-chore-box {
+      background-color: #ffe3da;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .add-chore-box input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .add-chore-box button {
+      padding: 10px 20px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .image-selection {
+      display: none;
+      margin-top: 30px;
+      max-width: 600px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .image-grid img.selected {
+      border-color: #ff6347;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #ffccbb;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav.open {
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with image and top nav -->
+  <header class="header">
+    <img src="Header .png" alt="TidyTime Banner" class="header-banner">
+
+    <nav class="top-nav">
+      <button class="hamburger" onclick="toggleNav()">☰</button>
+      <a href="Signup.html" class="signup-button">Sign up</a>
+    </nav>
+  </header>
+
+  <!-- Navigation Sidebar -->
+  <div class="nav" id="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Achivements.html">Achievements</a>
+    <a href="addchore.html">Add Chores</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- Spacer to push content below fixed header -->
+  <div class="spacer"></div>
+
+  <!-- Add Chore Form -->
+  <div class="add-chore-box">
+    <h2>Add a New Chore</h2>
+    <input type="text" placeholder="Enter your chore..." id="choreInput">
+    <br>
+    <button onclick="showImages()">Next: Choose Image</button>
+  </div>
+
+  <!-- Image Selection -->
+  <div class="image-selection" id="imageSelection">
+    <h3>Select an image for your chore:</h3>
+    <div class="image-grid" id="imageGrid">
+      <img src="download.png"     alt="Option 1" onclick="selectImage(this)">
+      <img src="download (1).png" alt="Option 2" onclick="selectImage(this)">
+      <img src="download (2).png" alt="Option 3" onclick="selectImage(this)">
+      <img src="download (3).png" alt="Option 4" onclick="selectImage(this)">
+      <img src="download (4).png" alt="Option 5" onclick="selectImage(this)">
+      <img src="download (5).png" alt="Option 6" onclick="selectImage(this)">
+      <img src="download (6).png" alt="Option 7" onclick="selectImage(this)">
+      <img src="download (7).png" alt="Option 8" onclick="selectImage(this)">
+      <img src="download (8).png" alt="Option 9" onclick="selectImage(this)">
+      <img src="download (9).png" alt="Option 10" onclick="selectImage(this)">
+      <img src="download (10).png" alt="Option 11" onclick="selectImage(this)">
+      <img src="download (11).png" alt="Option 12" onclick="selectImage(this)">
+    </div>
+  </div>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+
+    function showImages() {
+      const chore = document.getElementById('choreInput').value.trim();
+      if (chore === "") {
+        alert("Please enter a chore first!");
+        return;
+      }
+      document.getElementById('imageSelection').style.display = "block";
+    }
+
+    function selectImage(img) {
+      const images = document.querySelectorAll('.image-grid img');
+      images.forEach(image => image.classList.remove('selected'));
+      img.classList.add('selected');
+      alert("Chore + image selected!");
+    }
+  </script>
+
+</body>
+</html>

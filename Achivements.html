@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements</title>
+  <link rel="stylesheet" href="styles.css" />
+ <style>
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe0e7;
+    }
+
+    /* Header Image */
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Hamburger Button */
+    .menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Sidebar Nav */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #ffccbb;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav.open {
+      left: 0;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    /* Sign Up Button */
+    .signup-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Optional: Push content down below nav */
+    .spacer {
+      height: 60px;
+    }
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .achievements {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .achievement-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .achievement-gallery img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px; /* optional: makes corners rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* optional: adds a shadow */
+  }
+
+  /* Optional: Make gallery images stack more cleanly on small screens */
+  @media (max-width: 600px) {
+    .achievement-gallery {
+      gap: 12px;
+    }
+
+    .achievement-gallery img {
+      max-width: 100%;
+    }
+  }
+  
+</style>
+
+</head>
+<body>
+   <!-- Menu Button -->
+  <button class="menu-btn" onclick="toggleNav()">&#9776;</button>
+
+  <!-- Navigation Sidebar -->
+  <div class="nav" id="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Achivements.html">Achievements</a>
+    <a href="addchore.html">Add Chores</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- Header Image -->
+  <section class="hero-image">
+    <img src="Header .png" alt="Tidytime Banner" />
+  </section>
+
+  <!-- Page Title & Sign Up -->
+  <h1>TidyTime</h1>
+<a href="Signup.html" class="signup-btn">Sign up</a>
+
+  <!-- Spacer to push content below fixed items -->
+  <div class="spacer"></div>
+
+  <!-- Add your page content below this line -->
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+  </script>
+
+<section class="achievements">
+  <h2>Most recent achievements</h2>
+  <div class="achievement-gallery">
+    <img src="bed.png" alt="bed">
+    <img src="bedroom.png" alt="bedroom">
+    <img src="30dishes.png" alt="30 dishes">
+    <img src="vacuume.png" alt="vacuum">
+    <img src="5.png" alt="achievement 5">
+    <img src="3.png" alt="achievement 3">
+    <img src="7.png" alt="achievement 7">
+    <img src="6.png" alt="achievement 6">
+    <img src="8.png" alt="achievement 8">
+  </div>
+</section>
+
+</body>
+</html>

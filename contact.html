@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TidyTime</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe0e7;
+    }
+
+    /* Header Image */
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Hamburger Button */
+    .menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Sidebar Nav */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #ffccbb;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav.open {
+      left: 0;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    /* Sign Up Button */
+    .signup-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Optional: Push content down below nav */
+    .spacer {
+      height: 60px;
+    }
+
+      .contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+  min-height: 100vh;
+  padding-top: 80px; /* Push it a bit down from the top */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+    .contact-form {
+      background-color: #ffe0d6;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ffa07a;
+      border: none;
+      border-radius: 10px;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #ff8c5a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Button -->
+  <button class="menu-btn" onclick="toggleNav()">&#9776;</button>
+
+  <!-- Navbar -->
+  <div class="nav" id="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Achivements.html">Achievements</a>
+    <a href="addchore.html">Add Chores</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- Header -->
+  <section class="hero-image">
+    <img src="Header .png" alt="Tidytime Banner" />
+  </section>
+
+  <!-- Sign Up -->
+ <a href="Signup.html" class="signup-btn">Sign up</a>
+
+  <div class="spacer"></div>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+  </script>
+  <div class="contact-container">
+    <form class="contact-form" action="#" method="POST">
+      <h2>Contact Us</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
