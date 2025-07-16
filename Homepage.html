@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TidyTime</title>
   <style>
-    /* styling */
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,6 +13,7 @@
 
     .hero-image img {
       width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -53,10 +51,10 @@
       left: 0;
     }
 
-    /* Page Title */
     h1 {
       text-align: center;
       margin-top: 0.5em;
+      font-size: 2em;
     }
 
     .signup-btn {
@@ -68,6 +66,7 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      font-size: 1em;
     }
 
     .progress-bar {
@@ -84,8 +83,7 @@
     }
 
     .Checklist {
-      float: left;
-      width: 30%;
+      width: 100%;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -93,53 +91,103 @@
     .Checklist label {
       display: block;
       margin-bottom: 10px;
-    }
-.achievements {
-  outline: 2px dashed red;
-}
-   .achievements {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-#lala {text-align: center;}
-
-.achievements h2 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  text-align: center;
-}
-
-.achievement-gallery {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.achievement-gallery img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  text-align: center;
-}
-
-.story p {
-   max-width: 600px;
-   margin: auto;
-   text-align: center;
+      font-size: 1em;
     }
 
-   .large-image {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+    .achievements {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
 
+    #lala {
+      text-align: center;
+    }
 
+    .achievements h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .achievement-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .achievement-gallery img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .story p {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      font-size: 1em;
+      padding: 5px;
+    }
+
+    .large-image {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .signup-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+      }
+
+      .Checklist label {
+        font-size: 0.9em;
+      }
+
+      .achievement-gallery img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .story p {
+        font-size: 0.95em;
+        padding: 5px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu-btn,
+      .signup-btn {
+        font-size: 1em;
+      }
+
+      .achievement-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .achievement-gallery img {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .Checklist {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -149,7 +197,7 @@
   <div class="nav" id="nav">
     <a href="Homepage.html">Home</a>
     <a href="Achivements.html">Achievements</a>
-     <a href="addchore.html">Add Chores</a>
+    <a href="addchore.html">Add Chores</a>
     <a href="checklist.html">Checklist</a>
     <a href="contact.html">Contact us</a>
   </div>
@@ -160,7 +208,7 @@
   </section>
 
   <h1>Tidytime</h1>
-<a href="Signup.html" class="signup-btn">Sign up</a>
+  <a href="Signup.html" class="signup-btn">Sign up</a>
 
   <section class="progress-bar">
     <div class="progress"></div>
@@ -181,24 +229,26 @@
       <label><input type="checkbox" name="task9"> Organize desk</label>
     </form>
   </div>
-   <!--story-->
-    <div class="story">
-      <p>In our house, every day was a battle over who does what.</p>
-      <p>That’s why we created TidyTime <br> The ultimate chore management website that ends the arguments for good.</p>
-      <p>No more confusion, no more disagreements.</p>
-      <p>Just stress-free, fair chore sharing, and finally… <br>peace between siblings.</p>
-    </div>
-<div id="lala">
- <!--example achivents-->
-  <section class="achievements">
-    <h2>Most recent achievements</h2>
-    <div class="achievement-gallery">
-      <img src="30dishes.png" alt="Achievement 1" />
-      <img src="5.png" alt="Achievement 2" />
-      <img src="bed.png" alt="Achievement 3" />
-    </div>
-   </div>  
 
+  <!-- story -->
+  <div class="story">
+    <p>In our house, every day was a battle over who does what.</p>
+    <p>That’s why we created TidyTime <br> The ultimate chore management website that ends the arguments for good.</p>
+    <p>No more confusion, no more disagreements.</p>
+    <p>Just stress-free, fair chore sharing, and finally… <br>peace between siblings.</p>
+  </div>
+
+  <!-- achievements -->
+  <div id="lala">
+    <section class="achievements">
+      <h2>Most recent achievements</h2>
+      <div class="achievement-gallery">
+        <img src="30dishes.png" alt="Achievement 1" />
+        <img src="5.png" alt="Achievement 2" />
+        <img src="bed.png" alt="Achievement 3" />
+      </div>
+    </section>
+  </div>
 
   <script>
     function toggleNav() {
